@@ -63,12 +63,12 @@ if __name__ == "__main__":
 
     for i in range(N_train):
         out = one_sample()
-        dd.io.save(train_path / '{}.h5'.format(i), out)
+        dd.io.save(bytes(train_path / '{}.h5'.format(i)), out)
 
     for i in range(N_test):
         out = one_sample()
-        dd.io.save(test_path / '{}.h5'.format(i), out)
+        dd.io.save(bytes(test_path / '{}.h5'.format(i)), out)
 
     for i in range(N_val):
         out = one_sample()
-        dd.io.save(val_path / '{}.h5'.format(i), out)
+        dd.io.save(bytes(val_path / '{}.h5'.format(i)), out)
