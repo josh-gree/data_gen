@@ -1,8 +1,10 @@
 from template import template_array
 from poly_phantom import poly_phantom
 from inputs import sparse_sample_recon, sparse_sample_sino, poly
+from pathlib import Path
 
 import deepdish as dd
+
 
 recon_foos = {'recon_{}'.format(i): sparse_sample_recon(i)
               for i in [5, 10, 20, 50]}
@@ -55,6 +57,18 @@ if __name__ == "__main__":
     N_test = 10
     N_val = 5
 
+    train_path = Path('train')
+    test_path = Path('test')
+    val_path = Path('val')
+
     for i in range(N_train):
         out = one_sample()
-        dd.io.save('{}.h5'.format(i), out)
+        dd.io.save(train_path / '{}.h5'.format(i), out)
+
+    for i in range(N_test):
+        out = one_sample()
+        dd.io.save(test_path / '{}.h5'.format(i), out)
+
+    for i in range(N_val):
+        out = one_sample()
+        dd.io.save(val_path / '{}.h5'.format(i), out)
