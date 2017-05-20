@@ -53,9 +53,9 @@ def one_sample():
 
 
 if __name__ == "__main__":
-    N_train = 10
-    N_test = 10
-    N_val = 5
+    N_train = 500
+    N_test = 500
+    N_val = 100
 
     train_path = Path('data/train')
     test_path = Path('data/test')
