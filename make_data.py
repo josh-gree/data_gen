@@ -61,6 +61,10 @@ if __name__ == "__main__":
     test_path = Path('test')
     val_path = Path('val')
 
+    train_path.mkdir(exist_ok=True)
+    test_path.mkdir(exist_ok=True)
+    val_path.mkdir(exist_ok=True)
+
     for i in range(N_train):
         out = one_sample()
         dd.io.save(bytes(train_path / '{}.h5'.format(i)), out)
