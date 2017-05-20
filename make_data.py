@@ -57,9 +57,9 @@ if __name__ == "__main__":
     N_test = 10
     N_val = 5
 
-    train_path = Path('train')
-    test_path = Path('test')
-    val_path = Path('val')
+    train_path = Path('data/train')
+    test_path = Path('data/test')
+    val_path = Path('data/val')
 
     train_path.mkdir(exist_ok=True)
     test_path.mkdir(exist_ok=True)
